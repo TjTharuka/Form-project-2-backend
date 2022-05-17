@@ -1,0 +1,21 @@
+## Compiled JavaScript files
+lib/
+**/*.js.map
+
+# Typescript v1 declaration files
+typings/
+
+node_modules/
+*.log
+.runtimeconfig.json
+functions@
+package-lock.json
+yarn.lock
+.env
+env.json
+env.test.json
+
+# IDE
+.idea
+.vscode
+

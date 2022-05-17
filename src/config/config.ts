@@ -1,0 +1,58 @@
+const config = {
+  apiVersion: '/v1',
+  roles: {
+    admin: 'Admin',
+    user: 'User',
+  },
+  status: {
+    active: 'Active',
+    inactive: 'Inactive',
+  },
+  web_port : process.env.HTTP_PORT,
+  https_web_port : process.env.HTTPS_PORT,
+  database : process.env.DATABASE_URL,
+  testDatabase : process.env.TEST_DATABASE_URL,
+  app_name : process.env.APP_NAME,
+  server_path : process.env.SERVER_PATH,
+  imageSavePath : './uploads',
+  fileSavePath : './uploads/files',
+  imageDownloadPth : 'uploads/',
+  sslPrivetKeyPath : process.env.PRIVATE_KEY_PATH,
+  sslCertKeyPath : process.env.CERT_KEY_PATH,
+  sslCertAuthPath : process.env.CERT_AUTH_PATH,
+  debug_mode:process.env.DEBUG_MODE,
+  acceptStatus: {
+    pending: 'Pending',
+    accepted: 'Accepted',
+    rejected: 'Rejected',
+  },
+  dbEscapeCharacters: [
+    '{',
+    '}',
+    '(',
+    ')',
+    '[',
+    ']',
+    '/',
+    '$',
+    '%',
+    '*',
+    '+',
+    "'",
+    '"',
+    '!',
+    '@',
+    '#',
+    '^',
+    '&',
+    ':',
+  ],
+  requestBodyMaxSize: 10, // in MB
+  apiOperations: {
+    create: 'create',
+    update: 'update',
+  },
+  permissionDenied: 'Permission denied.',
+};
+
+export default config;
