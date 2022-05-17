@@ -1,21 +1,45 @@
-## Compiled JavaScript files
-lib/
-**/*.js.map
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Typescript v1 declaration files
-typings/
+# compiled output
+/dist
+/tmp
+/out-tsc
 
-node_modules/
-*.log
-.runtimeconfig.json
-functions@
-package-lock.json
-yarn.lock
+# dependencies
+/node_modules
+
+# dependencies
+/uploads
 .env
-env.json
-env.test.json
 
-# IDE
-.idea
-.vscode
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+package-lock.json
+
+# System Files
+.DS_Store
+Thumbs.db
