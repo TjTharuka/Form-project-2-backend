@@ -5,6 +5,16 @@ const model_name = 'paper';
 
 // create schema
 const schema = new mongoose.Schema({
+  PaperName: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+  dificultyLevel: {
+    type: String,
+    enum: ['Easy', 'Normal','Hard'],
+    required: true,
+  },
   grade: {
     type: Number,
     trim: true,
@@ -12,13 +22,9 @@ const schema = new mongoose.Schema({
   },
   quactions:[
     {
-      question: {
-        type:String,
-        required:true
-      },
-      answer: {
-        type:String,
-      },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'question',
+      required:true
     }
   ],
   adminId: {

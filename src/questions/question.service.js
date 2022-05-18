@@ -115,10 +115,10 @@ module.exports.getBysearch = async (searchResult) => {
  * @input {object}
  * @output {object}
  */
-module.exports.save = async (arr) => {
+module.exports.save = async (obj) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const data = await repository.save(arr);
+      const data = await repository.save(obj);
       resolve(data);
     } catch (error) {
       reject(error);

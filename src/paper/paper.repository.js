@@ -25,7 +25,7 @@ module.exports.findAll = (query,limit=0,skip=0) => {
       .find(query)
       .limit(limit) 
       .skip(skip)
-      .populate('school_id')
+      .populate('quactions')
       .then((data) => {
         resolve(data);
       })

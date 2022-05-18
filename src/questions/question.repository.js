@@ -1,6 +1,8 @@
 // import model
 const { quality } = require('jimp');
+const { arrayExtractKeyValue } = require('../../services/arrayKeyValueExtractorService');
 const model = require('./question.model');
+const { save:savePaper} = require('../paper/paper.repository');
 
 
 // count
@@ -50,10 +52,16 @@ module.exports.findById = (query) => {
 };
 
 // save object
-module.exports.save = (arr) => {
+module.exports.save = (obj) => {
   return new Promise((resolve, reject) => {
-     model.insertMany(arr)
-      .then((data) => {
+     model.insertMany(obj.quactions)
+      .then(async(data) => {
+        // extract all quacation ids
+        const extractedIdArray=arrayExtractKeyValue(data,'id');
+        // create new paper object
+        const paperObject={...obj,quactions:extractedIdArray,}
+        // save to paper
+        await savePaper(paperObject);
         resolve(data);
       })
       .catch((err) => {

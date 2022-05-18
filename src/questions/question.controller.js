@@ -36,12 +36,10 @@ module.exports.getSearch = async (req, res) => {
 
 // POST single object
 module.exports.postData = async (req, res) => {      
-  console.log('👍👍',req.body);
   try {
-    const output = await service.save(req.body.quactions);
+    const output = await service.save(req.body);
     return response.successWithData(output, res);
   } catch (error) {
-    console.log(error);
     return response.customError(error, res);
   }
 };

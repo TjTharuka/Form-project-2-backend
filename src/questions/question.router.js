@@ -27,7 +27,6 @@ router
       schema.addOneRecord,
       permission.question_save.granted
     ),
-
     controller.postData
   );
 
