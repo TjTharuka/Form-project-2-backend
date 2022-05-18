@@ -1,6 +1,7 @@
 const userRouter = require('../src/users/users.router');
 const paperRouter = require('../src/paper/paper.router');
 const userAnswersRouter = require('../src/userAnswers/userAnswers.router');
+const quactionsRouter = require('../src/questions/question.router');
 const filesRouter = require('../src/file-uploader/files.router');
 // create router
 const router = require("express").Router();
@@ -23,6 +24,8 @@ router.use("/users", userRouter);
 router.use("/papers", paperRouter);
 // set user answer routes
 router.use("/userAnswers",userAnswersRouter);
+// set quactions routes
+router.use("/quactions",quactionsRouter);
 
 // set image routes
 router.use("/files", filesRouter);
