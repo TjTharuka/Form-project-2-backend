@@ -20,7 +20,6 @@ const schema = new mongoose.Schema({
     required: true,
   },
   school_id: {
-
     type: mongoose.Schema.Types.ObjectId,
     ref: 'school',
     required: true,

@@ -40,16 +40,9 @@ module.exports.getAll = async (queryParams) => {
     let query = { is_deleted: false };
     
     // search by class_Room_Name
-    query = appendService.appendQueryParams(queryParams, 'class_Room_Name', query);
+    query = appendService.appendQueryParams(queryParams, 'grade', query,true);
     // search by body
-    query = appendService.appendQueryParams(queryParams, 'body', query);
-    // search by school_id
-    query = appendService.appendQueryParams(queryParams, 'school_id', query,true);
-    // search by student_count
-    query = appendService.appendQueryParams(queryParams, 'student_count', query, true);
-
-    
-    
+    query = appendService.appendQueryParams(queryParams, 'adminId', query,true);
     
     try {
       
