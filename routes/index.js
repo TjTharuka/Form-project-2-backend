@@ -23,6 +23,8 @@ router.use("/schools", require("../src/school/school.router"));
 router.use("/classrooms", require("../src/classroom/classroom.router"));
 // set paper routes
 router.use("/papers", require("../src/paper/paper.router"));
+// set user answer routes
+router.use("/userAnswers", require("../src/userAnswers/userAnswers.router"));
 // set notification routes
 router.use(
   "/notifications",
