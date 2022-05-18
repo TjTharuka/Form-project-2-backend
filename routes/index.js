@@ -1,3 +1,7 @@
+const userRouter = require('../src/users/users.router');
+const paperRouter = require('../src/paper/paper.router');
+const userAnswersRouter = require('../src/userAnswers/userAnswers.router');
+const filesRouter = require('../src/file-uploader/files.router');
 // create router
 const router = require("express").Router();
 // Import body parser
@@ -14,13 +18,13 @@ router.use(
 );
 
 // set user routes
-router.use("/users", require("../src/users/users.router"));
+router.use("/users", userRouter);
 // set paper routes
-router.use("/papers", require("../src/paper/paper.router"));
+router.use("/papers", paperRouter);
 // set user answer routes
-router.use("/userAnswers", require("../src/userAnswers/userAnswers.router"));
+router.use("/userAnswers",userAnswersRouter);
 
 // set image routes
-router.use("/files", require("../src/file-uploader/files.router"));
+router.use("/files", filesRouter);
 
 module.exports = router;
