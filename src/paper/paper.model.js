@@ -16,8 +16,9 @@ const schema = new mongoose.Schema({
     required: true,
   },
   adminId: {
-    type: String,
-    default: false,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
+    required: true,
   },
   is_deleted: {
     type: Boolean,
