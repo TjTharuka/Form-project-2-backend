@@ -59,7 +59,7 @@ module.exports.validateBodyWithToken = (schema, grantedArray) => {
 
 
 
-      permission.validity(decoded.role, grantedArray);  
+      await permission.validity(decoded.role, grantedArray);  
       return next();
       
     } catch (error) {

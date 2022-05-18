@@ -7,7 +7,6 @@ module.exports.permission_list = {
     granted: [
       permissionList.admin,
       permissionList.customer,
-      permissionList.staff,
     ],
   },
   paper_get_by_id: {
@@ -15,24 +14,15 @@ module.exports.permission_list = {
     granted: [
       permissionList.admin,
       permissionList.customer,
-      permissionList.staff,
-    ],
-  },
-  search_by_name: {
-    path: '/:schoolName',
-    granted: [
-      permissionList.admin,
-      permissionList.customer,
-      permissionList.staff,
     ],
   },
   paper_save: {
     path: '/',
-    granted: [permissionList.admin, permissionList.customer],
+    granted: [permissionList.admin],
   },
   paper_update: {
     path: '/',
-    granted: [permissionList.admin, permissionList.customer],
+    granted: [permissionList.admin],
   },
   paper_remove: {
     path: '/:id',
