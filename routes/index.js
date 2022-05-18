@@ -15,23 +15,10 @@ router.use(
 
 // set user routes
 router.use("/users", require("../src/users/users.router"));
-// set card routes
-router.use("/cards", require("../src/card/card.router"));
-// set schools routes
-router.use("/schools", require("../src/school/school.router"));
-// set classroom routes
-router.use("/classrooms", require("../src/classroom/classroom.router"));
 // set paper routes
 router.use("/papers", require("../src/paper/paper.router"));
 // set user answer routes
 router.use("/userAnswers", require("../src/userAnswers/userAnswers.router"));
-// set notification routes
-router.use(
-  "/notifications",
-  require("../src/notification/notification.router")
-);
-// set otp routes
-router.use("/otps", require("../src/otp/otp.router"));
 
 // set image routes
 router.use("/files", require("../src/file-uploader/files.router"));
