@@ -1,4 +1,5 @@
 // import mongoose
+const { required } = require('joi/lib/types/lazy');
 const mongoose = require('mongoose');
 // declare model name
 const model_name = 'userAnswers';
@@ -15,11 +16,14 @@ const schema = new mongoose.Schema({
     ref: 'paper',
     required: true,
   },
-  answers: {
-    type: Array,
-    trim: true,
-    required: true,
-  },
+  answers:  [
+    {
+      answer: {
+        type:String,
+        required:true
+      }
+    }
+  ],
   is_deleted: {
     type: Boolean,
     default: false,

@@ -10,11 +10,17 @@ const schema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  quactions: {
-    type: Array,
-    trim: true,
-    required: true,
-  },
+  quactions:[
+    {
+      question: {
+        type:String,
+        required:true
+      },
+      answer: {
+        type:String,
+      },
+    }
+  ],
   adminId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',

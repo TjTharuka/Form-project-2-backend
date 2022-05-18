@@ -63,7 +63,8 @@ module.exports.validateBodyWithToken = (schema, grantedArray) => {
       return next();
       
     } catch (error) {
-      return response.customError(error.message, res);
+      const errMessage=error.message?error.message:error;
+      return response.customError(errMessage, res);
     }
 
   };
