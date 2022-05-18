@@ -5,19 +5,19 @@ const model_name = 'paper';
 
 // create schema
 const schema = new mongoose.Schema({
-  body: {
-    type: String,
-    required: true,
-  },
-  class_Room_Name: {
-    type: String,
-    trim: true,
-    required: true,
-  },
-  student_count: {
+  grade: {
     type: Number,
     trim: true,
     required: true,
+  },
+  quactions: {
+    type: Array,
+    trim: true,
+    required: true,
+  },
+  adminId: {
+    type: String,
+    default: false,
   },
   is_deleted: {
     type: Boolean,
