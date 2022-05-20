@@ -5,7 +5,7 @@ const model_name = 'question';
 
 // create schema
 const schema = new mongoose.Schema({
-        question: {
+      question: {
         type:String,
         required:true
       },
@@ -21,6 +21,11 @@ const schema = new mongoose.Schema({
       answerType: {
         type:String,
         default:"",
+      },
+      fileId: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'file',
+        default:null,
       },
       adminId: {
         type: mongoose.Schema.Types.ObjectId,
