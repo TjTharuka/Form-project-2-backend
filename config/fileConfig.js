@@ -12,6 +12,11 @@ module.exports = {
       width: 300,
       height: 300,
     },
+    {
+      location: '590x331/',
+      width: 590,
+      height: 331,
+    },
   ],
   imageResizeQuality: 90,
   imageTypes: ['image/jpeg', 'image/png', 'image/jpg'],

@@ -22,7 +22,7 @@ router.route(files_get_by_id.path).get(controller.getOne);
 router
   .route(filesAdd.path)
   .post(
-    validator.validateHeader(filesAdd.granted),
+    // validator.validateHeader(filesAdd.granted),
     validator.validateFormData(fileSchema.saveFile),
     controller.saveFile
   );
