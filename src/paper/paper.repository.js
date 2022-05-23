@@ -47,6 +47,14 @@ module.exports.findById = (query) => {
   return new Promise((resolve, reject) => {
     model
       .findById(query)
+      .populate({
+        path:'quactions',
+        model:'question',
+        populate:{
+          path:'fileId',
+          model:'file',
+        }
+      })
       .then((data) => {
         resolve(data);
       })
