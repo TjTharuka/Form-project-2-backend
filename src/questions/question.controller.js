@@ -35,7 +35,7 @@ module.exports.getSearch = async (req, res) => {
 };
 
 // POST single object
-module.exports.postData = async (req, res) => {      
+module.exports.postData = async (req, res) => {   
   try {
     const output = await service.save(req.body);
     return response.successWithData(output, res);

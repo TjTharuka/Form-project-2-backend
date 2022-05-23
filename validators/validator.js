@@ -137,7 +137,6 @@ module.exports.validateHeader = (grantedArray) => {
  * @param {*} schema
  */
 module.exports.validateFormData = (schema) => async (req, res, next) => {
-  console.log(`111`);
   
   const form = formidable({
     maxFileSize: fileConfig.maxFileSize, 
@@ -148,9 +147,7 @@ module.exports.validateFormData = (schema) => async (req, res, next) => {
         reject(err);
         return response.customError(`${err}`, res);
       }
-      console.log(`222`);
       fields.dimensions=[{width:590,height:331}];
-      console.log(fields.dimensions );
       resolve({ fields, files });
       return null;
     });
