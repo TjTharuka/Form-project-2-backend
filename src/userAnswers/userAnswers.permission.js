@@ -18,7 +18,7 @@ module.exports.permission_list = {
   },
   userAnswers_save: {
     path: '/',
-    granted: [permissionList.admin],
+    granted: [permissionList.admin,permissionList.customer],
   },
   userAnswers_update: {
     path: '/',
