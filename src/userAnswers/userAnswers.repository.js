@@ -43,6 +43,7 @@ module.exports.findById = (query) => {
       .findById(query)
       .populate('answers.question')
       .populate('userId')
+      .populate('paperId')
       .then((data) => {
         resolve(data);
       })
