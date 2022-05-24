@@ -42,6 +42,14 @@ module.exports.findById = (query) => {
     model
       .findById(query)
       .populate('answers.question')
+      .populate({
+        path:'answers.question',
+        model:'question',
+        populate:{
+          path:'fileId',
+          model:'file',
+        }
+      })
       .populate('userId')
       .populate('paperId')
       .then((data) => {
