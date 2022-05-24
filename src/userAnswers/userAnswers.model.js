@@ -17,18 +17,6 @@ const schema = new mongoose.Schema({
     ref: 'paper',
     required: true,
   },
-  // answers:[
-  //   question:{
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: 'question',
-  //     required:true
-  //   },
-  //   answer:{
-  //   type: String,
-  //       required:true
-  //   },
-  
-  // ]
   answers:[
     {
       question:{

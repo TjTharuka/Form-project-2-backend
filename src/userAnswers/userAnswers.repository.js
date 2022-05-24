@@ -26,6 +26,7 @@ module.exports.findAll = (query,limit=0,skip=0) => {
       .limit(limit) 
       .skip(skip)
       .populate('answers.question')
+      .populate('userId')
       .then((data) => {
         resolve(data);
       })
