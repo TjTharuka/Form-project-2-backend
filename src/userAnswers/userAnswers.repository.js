@@ -41,6 +41,8 @@ module.exports.findById = (query) => {
   return new Promise((resolve, reject) => {
     model
       .findById(query)
+      .populate('answers.question')
+      .populate('userId')
       .then((data) => {
         resolve(data);
       })
