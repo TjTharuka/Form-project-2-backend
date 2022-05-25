@@ -35,6 +35,9 @@ module.exports.post = async (req, res) => {
     const output = await service.save(req.body);
     return successWithData(output, res);
   } catch (error) {
+    console.log('❤❤');
+    console.log(error);
+
     return customError(error, res);
   }
 };

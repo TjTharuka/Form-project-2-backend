@@ -12,6 +12,7 @@ module.exports.post = joi.object().keys({
   password: joi.string().required(),
   email: joi.string().required(),
   phone: joi.string().required(),  
+  assigned_papers: joi.array(),  
   role: joi
     .string()
     .valid(permissionList.customer, permissionList.staff, permissionList.admin),
@@ -23,6 +24,7 @@ module.exports.create = joi.object().keys({
   age: joi.number(),
   address: joi.string(),
   email: joi.string().required(),
+  assigned_papers: joi.array(),
   role: joi
     .string()
     .valid(permissionList.customer, permissionList.staff, permissionList.admin),
@@ -38,6 +40,7 @@ module.exports.put = joi.object().keys({
   password: joi.string(),
   email: joi.string(),
   phone: joi.string(),
+  assigned_paper: joi.string(),
   role: joi
     .string()
     .valid(permissionList.customer, permissionList.staff, permissionList.admin),

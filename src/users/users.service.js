@@ -107,6 +107,7 @@ module.exports.getById = async (id) => {
 module.exports.checkByCustomQuery = async (query) => { 
   return new Promise(async (resolve, reject) => {
     try {
+      console.log('11111111',query);
       const data = await repository.findAll(query);
 
       if (!data || data.length == 0) {
@@ -137,9 +138,11 @@ module.exports.save = async (obj) => {
       obj.confirmation_code = uniqId();
       // hash the password
       obj.password = createPasswordHash(obj.password);
+      console.log(`😉`);
+      console.log(obj);
       const data = await repository.save(obj);
       // send email
-      mailSender.welcomeMail(data.email, data.name, data.confirmation_code);
+      // mailSender.welcomeMail(data.email, data.name, data.confirmation_code);
       resolve(data);
     } catch (error) {
       reject(error);
@@ -201,10 +204,16 @@ module.exports.updateSingleObj = async (obj) => {
       if (obj.phone) {
         await findUniqueFieldForUpdate('phone', obj.phone, id, 'user');
       }
-
+      if (obj.assigned_paper) {
+        await findUniqueFieldForUpdate('assigned_papers', obj.assigned_paper, id, 'user');
+      }
+      // if object have assign paper(and push it  array)
+      if (obj.assigned_paper) {
+        obj={...obj,$push: { assigned_papers:obj.assigned_paper}}
+      }
       const data = await repository.updateSingleObject(
         { _id: ObjectId(id), is_deleted: false },
-        obj
+        {...obj}
       );
 
       if (!data) {

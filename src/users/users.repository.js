@@ -40,6 +40,7 @@ module.exports.findById = (query) => {
   return new Promise((resolve, reject) => {
     model
       .findById(query)
+      .populate("assigned_papers")
       .then((data) => {
         resolve(data);
       })

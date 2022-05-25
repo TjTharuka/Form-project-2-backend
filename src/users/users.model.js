@@ -7,6 +7,7 @@ const model_name = 'user';
 const permissionList = require('../../config/permissionConfig').userRoles;
 // import user status
 const { userStatus } = require('../../config/permissionConfig');
+const { arrayExtractKeyValue } = require('../../services/arrayKeyValueExtractorService');
 
 // create schema
 const schema = new mongoose.Schema(
@@ -39,8 +40,14 @@ const schema = new mongoose.Schema(
     phone: {
       type: String,
       trim: true,
-      unique: true,
+      // unique: true,
     },
+    assigned_papers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'paper',
+      },
+    ],
     role: {
       type: String, 
       required: true,
