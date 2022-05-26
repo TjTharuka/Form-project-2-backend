@@ -107,7 +107,6 @@ module.exports.getById = async (id) => {
 module.exports.checkByCustomQuery = async (query) => { 
   return new Promise(async (resolve, reject) => {
     try {
-      console.log('11111111',query);
       const data = await repository.findAll(query);
 
       if (!data || data.length == 0) {
@@ -138,8 +137,6 @@ module.exports.save = async (obj) => {
       obj.confirmation_code = uniqId();
       // hash the password
       obj.password = createPasswordHash(obj.password);
-      console.log(`😉`);
-      console.log(obj);
       const data = await repository.save(obj);
       // send email
       // mailSender.welcomeMail(data.email, data.name, data.confirmation_code);

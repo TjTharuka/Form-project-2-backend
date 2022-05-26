@@ -39,8 +39,6 @@ module.exports.getAll = async (queryParams) => {
   return new Promise(async (resolve, reject) => {
     let query = { is_deleted: false };
     
-    // search by class_Room_Name
-    query = appendService.appendQueryParams(queryParams, 'grade', query,true);
     // search by body
     query = appendService.appendQueryParams(queryParams, 'adminId', query,true);
     

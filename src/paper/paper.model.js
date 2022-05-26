@@ -10,16 +10,6 @@ const schema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  dificultyLevel: {
-    type: String,
-    enum: ['Easy', 'Normal','Hard'],
-    required: true,
-  },
-  grade: {
-    type: Number,
-    trim: true,
-    required: true,
-  },
   quactions:[
     {
       type: mongoose.Schema.Types.ObjectId,
